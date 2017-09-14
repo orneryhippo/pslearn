@@ -39,7 +39,7 @@ defmodule Servy.TwilioTasks do
 		
 		body = "{:form [{'To', '#{ top_num }'}, {'From', '#{ from }'}, {'Url', '#{ callback_url }'}, {'Method', 'POST'}, {'SendDigits', 'www1www1www'}, {'Timeout', 20, ]}"
 		IO.puts body
-		IO.puts header
+		IO.puts headers
 		IO.puts twilio_url
 		call_req(payload, twilio_url)
 	end
