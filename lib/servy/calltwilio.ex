@@ -26,7 +26,7 @@ defmodule Servy.CallTwilio do
 	def call_twilio(the_digits \\ "000000000") do
 		top_num = "+18582631960"
 		from = "+14012503981"
-		twilio_url = Path.join(twilio_url(), "Calls.json"
+		twilio_url = Path.join(twilio_url(), "Calls.json")
 		app_url = "https://damp-journey-48506.herokuapp.com"
 		callback_url = Path.join(Path.join(app_url, "connected"), the_digits)
 
