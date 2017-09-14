@@ -23,7 +23,7 @@ defmodule Servy.TwilioTasks do
 		response
 	end
 
-	def process_response(response) do
+	def process_response(responsSere) do
 		#debugging this new function
 		IO.inspect response
 	end
@@ -37,7 +37,7 @@ defmodule Servy.TwilioTasks do
 		#payload = %{'To' => top_num, 'From' => from, 'Url' => callback_url, 'Method' => 'POST', 'SendDigits' => 'www1www1www', 'Timeout' => 20}
 		headers = std_headers()
 		
-		body = "{:form [{'To', '#{ top_num }'}, {'From', '#{ from }'}, {'Url', '#{ callback_url }'}, {'Method', 'POST'}, {'SendDigits', 'www1www1www'}, {'Timeout', 20, ]}"
+		body = "{:form [{'To', '#{ top_num }'}, {'From', '#{ from }'}, {'Url', '#{ callback_url }'}, {'Method', 'POST'}, {'SendDigits', 'www1www1www'}, {'Timeout', 20}]}"
 		IO.puts body
 		IO.puts headers
 		IO.puts twilio_url
