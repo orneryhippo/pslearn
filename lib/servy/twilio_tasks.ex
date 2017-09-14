@@ -10,7 +10,7 @@ defmodule Servy.TwilioTasks do
 
 	def std_headers() do
 		# nope: headers = %{ 'content-type' => "application/x-www-form-urlencoded", 'cache-control' => "no-cache" }
-		headers = [{"content-type", "x-www-form-urlencoded"}, {'cache-control' , "no-cache"}]
+		[{"content-type", "x-www-form-urlencoded"}, {'cache-control' , "no-cache"}] 
 	end
 
 	def call_req(url, payload, headers) do
@@ -41,7 +41,7 @@ defmodule Servy.TwilioTasks do
 		IO.puts body
 		IO.puts headers
 		IO.puts twilio_url
-		call_req(twilio_url, payload, headers)
+		call_req(twilio_url, body, headers)
 	end
 
 end
