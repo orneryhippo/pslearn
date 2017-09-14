@@ -1,7 +1,9 @@
 defmodule Servy.CallTwilio do
-	@acct_sid ""
-	@test_sid "AC0525379676faeb5d0fe9e5cb9713854d"
-	@test_auth "0d08cee777d08713948656847892766a"
+	def twilio_url() do
+		_acct = "ACea64eff94999fd45f71ed6a397cf4251"
+		_auth = "3bf3e6189776034376e8fbbbbda349a5"	
+		"https://#{_acct}:#{_auth}@api.twilio.com/2010-04-01/Accounts/#{_acct}" 
+	end
 
 	def show() do
 		IO.puts "#{test_sid}"
