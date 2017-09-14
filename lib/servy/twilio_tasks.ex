@@ -18,7 +18,7 @@ defmodule Servy.TwilioTasks do
 		IO.inspect payload
 		IO.inspect headers
 		#response = HTTPoison.put(url, payload, headers)
-		response = HTTPoison.request(:post, url, body, headers )
+		response = HTTPoison.request(:post, url, payload, headers )
 		process_response(response)
 		response
 	end
@@ -41,7 +41,7 @@ defmodule Servy.TwilioTasks do
 		IO.puts body
 		IO.puts headers
 		IO.puts twilio_url
-		call_req(payload, twilio_url)
+		call_req(payload, twilio_url, headers)
 	end
 
 end
