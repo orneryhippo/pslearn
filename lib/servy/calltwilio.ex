@@ -1,6 +1,6 @@
 defmodule Servy.CallTwilio do
 
-	import TwilioTasks
+	import Servy.TwilioTasks
 
 	def request_info(the_digits) do
 		task = Task.async(&call_twilio/1, [the_digits])
