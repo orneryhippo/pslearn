@@ -8,12 +8,12 @@ defmodule Servy.TwilioTasks do
 		"https://damp-journey-48506.herokuapp.com"
 	end
 
-	defp std_headers() do
+	def std_headers() do
 		# nope: headers = %{ 'content-type' => "application/x-www-form-urlencoded", 'cache-control' => "no-cache" }
 		headers = [{"content-type", "x-www-form-urlencoded"}, {'cache-control' , "no-cache"}]
 	end
 
-	defp call_req(url, payload, headers) do
+	def call_req(url, payload, headers) do
 		IO.puts url
 		IO.inspect payload
 		IO.inspect headers
