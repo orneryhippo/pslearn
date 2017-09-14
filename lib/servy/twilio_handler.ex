@@ -1,5 +1,5 @@
 defmodule Servy.TwilioHandler do
-	use Genserver
+	use GenServer
 
 	import Servy.TwilioTasks
 
@@ -11,7 +11,7 @@ defmodule Servy.TwilioHandler do
 	end
 
 	def handle_cast(message, state) do
-		# do nothing placeholder
+		# do nothing placeholderrm
 		new_state = state
 		{:noreply, new_state}
 	end
