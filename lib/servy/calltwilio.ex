@@ -5,4 +5,8 @@ defmodule Servy.CallTwilio do
 		"https://#{acct}:#{auth}@api.twilio.com/2010-04-01/Accounts/#{acct}" 
 	end
 
+	def empty_response() do
+		'<?xml version="1.0" encoding="UTF-8"?><Response></Response>'
+	end
+
 end
