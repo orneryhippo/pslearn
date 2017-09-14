@@ -9,6 +9,7 @@ defmodule Servy.Handler do
 		|> format_response
 	end
 
+	#concise syntax for oneline function, note comma, colon without ent.
 	def log(conv), do: IO.inspect conv
 
 	def parse(request) do
@@ -22,9 +23,18 @@ defmodule Servy.Handler do
 	end
 
 	def route(conv) do
-		%{conv | resp_body: "Bears, Lions, Tigers"}
+		route(conv, conv.path)
 	end
 	
+	def route(conv, "/wildthings") do
+		%{conv | resp_body: "Bears, Lions, Tigers"}
+	end
+
+	def route(conv, "/bears") do
+		
+		%{conv | resp_body: "Teddy, Smokey, Paddington"}
+	end
+
 	def format_response(conv) do
 		#TODO: Use values in the map to create an HTTP response string
 		"""
