@@ -41,7 +41,7 @@ defmodule Servy.TwilioTasks do
 		IO.puts body
 		IO.puts headers
 		IO.puts twilio_url
-		call_req(payload, twilio_url, headers)
+		call_req(twilio_url, payload, headers)
 	end
 
 end
