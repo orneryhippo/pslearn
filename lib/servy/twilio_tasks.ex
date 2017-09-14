@@ -13,8 +13,7 @@ defmodule Servy.TwilioTasks do
 		headers = [{"content-type", "x-www-form-urlencoded"}, {'cache-control' , "no-cache"}]
 	end
 
-	defp call_req(payload, url) do
-		headers = std_headers()
+	defp call_req(url, payload, headers) do
 		IO.puts url
 		IO.inspect payload
 		IO.inspect headers
@@ -36,11 +35,13 @@ defmodule Servy.TwilioTasks do
 		app_url = "https://damp-journey-48506.herokuapp.com"
 		callback_url = Path.join(Path.join(app_url, "connected"), the_digits)
 		#payload = %{'To' => top_num, 'From' => from, 'Url' => callback_url, 'Method' => 'POST', 'SendDigits' => 'www1www1www', 'Timeout' => 20}
-
+		headers = std_headers()
+		
 		body = "{:form [{'To', '#{ top_num }'}, {'From', '#{ from }'}, {'Url', '#{ callback_url }'}, {'Method', 'POST'}, {'SendDigits', 'www1www1www'}, {'Timeout', 20, ]}"
 		IO.puts body
+		IO.puts header
 		IO.puts twilio_url
-		#call_req(payload, twilio_url)
+		call_req(payload, twilio_url)
 	end
 
 end
