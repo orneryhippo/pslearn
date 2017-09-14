@@ -23,7 +23,7 @@ defmodule Servy.TwilioTasks do
 		response
 	end
 
-	def process_response(responsSere) do
+	def process_response(response) do
 		#debugging this new function
 		IO.inspect response
 	end
