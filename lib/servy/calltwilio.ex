@@ -28,13 +28,7 @@ defmodule Servy.CallTwilio do
 		url = twilio_url() <> "/Calls.json"
 		top_num = ""
 		from = ""		
-		payload = {'To' => top_num,
-					'From' => from, 
-					'Url' => callback_url, 
-					'Method' => 'POST',
-					'SendDigits' => 'www1www1www',
-					'Timeout' => 20
-				}
+		payload = {'To' => top_num, 'From' => from, 'Url' => callback_url, 'Method' => 'POST','SendDigits' => 'www1www1www', 'Timeout' => 20}
 		response = call_req(payload, url)
 	end
 end
