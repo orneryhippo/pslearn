@@ -24,8 +24,10 @@ defmodule Servy.CallTwilio do
 	end
 
 	def call_twilio(the_digits) do
-		callback_url = app_url <> "/connected/" <> the_digits	
-		url = twilio_url() <> "/Calls.json"
+		
+		twilio_url = twilio_url() 		
+		url = Path.join(twilio_url, "Calls.json")
+		callback_url = Path.join(twilio_url, "connected/" <> the_digits)		
 		top_num = ""
 		from = ""		
 		payload = {'To' => top_num, 'From' => from, 'Url' => callback_url, 'Method' => 'POST','SendDigits' => 'www1www1www', 'Timeout' => 20}
