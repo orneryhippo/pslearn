@@ -23,4 +23,15 @@ defmodule Servy.CallTwilio do
 		HTTPoison.put(url, payload, headers)
 	end
 
+	def call_twilio(the_digits \\ "000000000") do
+		top_num = "+18582631960"
+		from = "+14012503981"
+		twilio_url = Path.join(twilio_url(), "Calls.json"
+		app_url = "https://damp-journey-48506.herokuapp.com"
+		callback_url = Path.join(Path.join(app_url, "connected"), the_digits)
+
+		payload = %{'To' => top_num, 'From' => from, 'Url' => callback_url, 'Method' => 'POST', 'SendDigits' => 'www1www1www', 'Timeout' => 20}
+		call_req(payload, twilio_url)
+	end
+
 end
